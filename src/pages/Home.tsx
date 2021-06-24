@@ -7,6 +7,7 @@ import googleIconImg from '../assets/images/google-icon.svg';
 import { Button } from '../components/Button';
 
 import { useAuth } from '../hooks/useAuth';
+import { useTheme } from '../hooks/useTheme'
 import { FormEvent, useState } from 'react';
 
 import '../styles/auth.scss'
@@ -15,6 +16,9 @@ import { database } from '../services/firebase';
 export function Home() {
     const history = useHistory();
     const { user, signInWithGoogle } = useAuth();
+
+    const { theme, toggleTheme } = useTheme();
+
     const [roomCode, setRoomCode] = useState('');
 
     async function handleCreateRoom() {
@@ -43,7 +47,7 @@ export function Home() {
     }
 
     return (
-        <div id="page-auth">
+        <div id="page-auth" className={theme}>
             <aside>
                 <img src={illustrationImg} alt="Ilustração simbolizando pergundas e respostas" />
                 <strong>Crie salas de q&amp;A ao-vivo</strong>
@@ -51,6 +55,8 @@ export function Home() {
             </aside>
             <main>
                 <div className="main-content">
+                    <h1>{theme}</h1>
+                    <button onClick={toggleTheme}>toggle</button>
                     <img src={logoImg} alt="Leatmeask" />
                     <button onClick={handleCreateRoom} className="create-room">
                         <img src={googleIconImg} alt="logo do google" />
