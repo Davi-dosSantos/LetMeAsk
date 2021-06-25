@@ -34,3 +34,4 @@
  [] Refatoração do código css e organização de pastas/arquivos
  [] Autenticações alternativas
  [] implementação REact modal ( telas de confirmações ...etc)
+ [x] ordenação perguta por numero de likes
