@@ -31,6 +31,6 @@
 ### Desafios adiconais a serem feitos:
  [] modo escuro
  [] Otimização da escuta de atualização do firebase para novas perguntas
- [] Refatoração do código css
+ [] Refatoração do código css e organização de pastas/arquivos
  [] Autenticações alternativas
  []
